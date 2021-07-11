@@ -1,2 +1,2 @@
 # HMS
-Hospital Management System | Teckstack - python, flask, mysql
+Hospital Management System | Techstack - python, flask, mysql
