@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+{% include "layout2.html"%}
+{% block content %}
+        <div>
+            <p><h4 style="text-align: center;font-weight: bold;font-size:x-large;">View Patients</h4></p>
+            <center>
+                <table class="pure-table" >
+                    <thead>
+                        <tr>
+                            <th>PatientId</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>DOJ</th>
+                            <th>Type of Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{ i.pid }}</td>
+                            <td>{{ i.p_name }}</td>
+                            <td>{{ i.age }}</td>
+                            <td>{{ i.address }}</td>
+                            <td>{{ i.doj }}</td>
+                            <td>{{ i.bedtype }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </center>
+        </div>
+{% endblock %}    

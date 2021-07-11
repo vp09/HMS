@@ -1,0 +1,65 @@
+{% include "layout2.html"%}
+{% extends "layout.html"%}
+
+{% block content %}
+
+
+<div>
+            <p><h4 class="medicine-head">Medicines Issued</h4></p>
+            <center>
+                <table class="pure-table" >
+                    <thead>
+                        <tr>
+                            <th>PatientId</th>
+                            <th>Medicine Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{ i.pid }}</td>
+                            <td>{{ i.medicine }}</td>
+                            <td>{{ i.quantity }}</td>
+                            <td>₹ {{ i.price }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </center>
+        </div>
+        <div>
+            <center>
+                <form action="/all" method="POST">
+                <table class="view_patient_table">
+                   <!-- <tr>
+                        <td class="st_column">Patient ID</td>
+                        <td>
+                        <td><input type="text" name="pid"></td>
+
+                    </tr>  -->
+                    <tr>
+                        <td class="st_column">Medicine name</td>
+                        <td>
+                        <td><input type="text" name="mname"></td>
+
+                    </tr>
+                    <tr>
+                        <td class="st_column">Quantity</td>
+                        <td>
+                        <td><input type="text" name="quan"></td>
+                    </tr>
+                    <tr>
+                        <td class="st_column">Price</td>
+                        <td>
+                        <td><input type="text" name="price"></td>
+                    </tr>
+                    </table>
+                    <br><br>
+                    <input type="Submit" class="submit" value="Add">
+                    <input type="Reset" class="Reset" value="Reset">
+                </form>
+            </center>
+        </div>
+{% endblock %}   

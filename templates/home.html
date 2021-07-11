@@ -1,0 +1,24 @@
+{% extends "layout.html"%}
+{% include "layout2.html"%}                      
+{% block title%} Home {% endblock%}
+{% block content%}
+
+<div  class = "container">
+<div  class = "row">
+<div  class = "col-md-12">
+    <div class="col-md-3" style="background-color:#dbf6e9"><h1 >Hello,</h1></div>
+    
+   
+{% if session ['name']%}
+    
+    <div class="col-md-4" style="background-color:#dbf6e9"><h1>Welcome {{session ['name']}}</h1></div>
+
+        
+            
+{% else%}
+<div class="col-md-4" style="background-color:#dbf6e9"><h1>Please Login first...</h1></div>
+{% endif%}
+</div>
+</div>
+</div>
+{% endblock%}

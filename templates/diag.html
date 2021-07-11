@@ -1,0 +1,51 @@
+{% extends "layout.html"%}
+{% include "layout2.html"%}
+{% block content %}
+
+
+<div>
+            <p><h4 style="text-align: center;font-weight: bold;font-size:x-large;">Diagnostics</h4></p>
+            <center>
+                <table class="pure-table" >
+                    <thead>
+                        <tr>
+                            <th>PatientId</th>
+                            <th>Test Name</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{ i.pid }}</td>
+                            <td>{{ i.diagnosis }}</td>
+                            <td>₹ {{ i.cost }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </center>
+        </div>
+        <div>
+            <center>
+                <form action="/diag" method="POST">
+                <table class="view_patient_table">
+                    <tr>
+                        <td class="st_column">Test name</td>
+                        <td>
+                        <td><input type="text" name="tname"></td>
+
+                    </tr>
+                    <tr>
+                        <td class="st_column">Cost</td>
+                        <td>
+                        <td><input type="text" name="cost"></td>
+                    </tr>
+                    </table>
+                    <br><br>
+                    <input type="Submit" class="submit" value="Add">
+                    <input type="Reset" class="Reset" value="Reset">
+                </form>
+            </center>
+        </div>
+{% endblock %}   
